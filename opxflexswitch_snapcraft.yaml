@@ -1,0 +1,43 @@
+name: opxflexswitch-dni-l9032nxb
+version: '1.0.1-1'
+summary: OpxFlexSwitch open source network protocol suite
+description: |
+  This SNAP installs and runs OpxFlexSwitch for the DNI L9032NXB switch.
+  The switch has 32x100Gb QSFP28 front-panel interfaces.
+grade: devel
+confinement: devmode
+
+build-packages: [redis-server, libhiredis-dev, gcc, g++, libxml2, libpython-dev, python-setuptools, doxygen, libsystemd-dev, libssl-dev, exuberant-ctags, libxml2-dev, python-pip, debhelper ]
+
+parts:
+
+  opx-flxmodels:
+    source: https://github.com/open-switch/opx-flxmodels.git
+    plugin: dump
+    stage: 
+      - actions/*
+      - events/*
+      - objects/*
+    snap: 
+      - actions/*
+      - events/*
+      - objects/*
+    organize:
+      README.md: README_flxmodels.md
+
+  opx-flxreltools:
+    source: https://github.com/open-switch/opx-flxmodels.git
+    plugin: dump
+    organize:
+      README.md: README_flxreltools.md
+      
+  opx-flxsdk:
+    source: https://github.com/open-switch/opx-flxSdk.git
+    plugin: dump
+    organize:
+      README.md: README_flxsdk.md
+
+
+  
+
+    

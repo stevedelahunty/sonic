@@ -158,6 +158,15 @@ parts:
     #plugin: make
     plugin: autotools
     after: [ nas-common ]
+    configflags:
+        - --includedir=/usr/include
+        - --prefix=/
+        - --exec-prefix=/
+        - --libdir=/lib
+        - --bindir=/bin
+        - --sysconfdir=/etc
+        - CFLAGS=-I$(SNAPCRAFT_STAGE)/usr/include/opx
+        - CXXFLAGS=-I$(SNAPCRAFT_STAGE)/usr/include/opx
     #GASHACKorganize:
       #GASHACKusr/include/sai: usr/include
     stage: 

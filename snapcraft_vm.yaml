@@ -380,6 +380,7 @@ parts:
         #- --no-parallel-build
         - CFLAGS=-I$(SNAPCRAFT_STAGE)/usr/include/opx
         - CXXFLAGS=-I$(SNAPCRAFT_STAGE)/usr/include/opx
+    disable-parallel: true
     after: [ nas-platform-vm ]
     stage: 
       - usr/*
